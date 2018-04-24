@@ -11,17 +11,10 @@ class TestPreworkGame < Minitest::Test
       assert_instance_of Game, game
     end
 
-    # def test_play
-    #   game = Game.new
-    #   user_input = gets.chomp.to_i
-    #   assert_equal user_input, game.play
-    # end
-
-    # def test_cheat
-    #   game = Game.new
-    #   number = rand(1..100)
-    #   assert_equal "The number is #{number}", game.cheat
-    # end
+    def test_cheat
+      game = Game.new
+      assert_equal "42", game.cheat
+    end
 
 
 

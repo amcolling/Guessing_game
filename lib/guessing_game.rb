@@ -1,35 +1,40 @@
 require 'pry'
 class Game
-  attr_reader :number,
-              :counter,
-              :winner
+  attr_reader :counter
 
   def initialize
-    @number = 42
     @counter = 0
-    @winner = false
   end
+
+
 
 
   def start_game
-    puts 'I have generated a random number for you to guess, what is your guess? To reveal the number, type (c)heat'
-  @counter += 1
-  guess = gets.chomp.to_i
-  if guess == "hint" || guess == "h"
-    puts 'The number is an even number, and is between 40 and 50'
-  until @winner == true
-    guess = gets.chomp.to_i
-      if guess < number
-        puts 'too low, guess again!'
-      elsif guess > number
-        puts 'too high, guess again!'
-      elsif guess == number
-      puts 'You guessed the right number'
-      @winner = true
+    number = rand(1..100)
 
+    loop do
+      puts 'Guess a number between 1 to 100. Type Hint, for a hint, type Cheat to cheat'
+      guess = gets.chomp
+      @counter += 1
+      if guess == number
+        puts "You win! You guessed the right number"
+      end
+      if guess.to_s == "Cheat"
+        puts "You are a cheater!!!! Shame! Shame! Shame! The answer is #{number}"
+        break
+      end
+      if guess.to_s == "Hint"
+        puts "Here is a hint, the number is divisible by 2"
+        break
+      end
+      if guess.to_i < number
+        puts "Too low, guess again!"
+        guess = gets.chomp
+      elsif
+        guess.to_i > number
+        puts "Too high, guess again!"
+        guess = gets.chomp
+      end
     end
-  end
-  end
-
   end
 end
