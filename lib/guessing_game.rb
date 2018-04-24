@@ -6,9 +6,6 @@ class Game
     @counter = 0
   end
 
-
-
-
   def start_game
     number = rand(1..100)
 

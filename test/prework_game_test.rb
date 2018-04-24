@@ -13,14 +13,9 @@ class TestPreworkGame < Minitest::Test
 
     def test_cheat
       game = Game.new
-      assert_equal "42", game.cheat
+      assert_equal "You are a cheater!!!! Shame!
+      Shame! Shame! The answer is #{game.number}", game.cheat
     end
-
-
-
-
-
-
 end
 
 #
