@@ -1,5 +1,5 @@
-require './lib/guessing_game'
+require './lib/game'
 
-Game.new
+# Game.new.start_game
 game = Game.new
 game.start_game
