@@ -1,6 +1,6 @@
 
 class Game
-  # attr_reader :number
+
 
   def initialize
     @number = rand(1..100)
